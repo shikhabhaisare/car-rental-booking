@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:carbookingdb;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+server:
+  port: 8080
+
+external:
+  driving-license:
+    base-url: http://localhost:8080/stub/driving
+  pricing:
+    base-url: http://localhost:8080/stub/pricing
+
+logging:
+  level:
+    root: INFO
+    com.xyz.carrental.booking: DEBUG

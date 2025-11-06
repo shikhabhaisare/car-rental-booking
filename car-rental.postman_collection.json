@@ -1,0 +1,154 @@
+{
+  "info": {
+    "name": "XYZ Car Rental Booking Service",
+    "_postman_id": "8fdb8c77-47a3-4a38-b99b-123456789abc",
+    "description": "Postman collection for XYZ Car Rental microservice with Basic Auth for /api/** endpoints and open access for /stub/**.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "admin",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "password123",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Confirm Car Rental Booking",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "auth": {
+          "type": "inherit"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/bookings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"drivingLicenseNumber\": \"DL123456789\",\n  \"age\": 28,\n  \"startDate\": \"2025-12-01\",\n  \"endDate\": \"2025-12-05\",\n  \"carSegment\": \"MEDIUM\"\n}"
+        },
+        "description": "Confirms a new car rental booking and returns the booking ID."
+      }
+    },
+    {
+      "name": "Retrieve Car Rental Booking Details",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "auth": {
+          "type": "inherit"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/bookings/{{bookingId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "bookings",
+            "{{bookingId}}"
+          ]
+        },
+        "description": "Retrieves booking details using the booking ID from the confirm endpoint."
+      }
+    },
+    {
+      "name": "Stub - Driving License Details",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/stub/driving/license/details",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "stub",
+            "driving",
+            "license",
+            "details"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"licenseNumber\": \"DL123456789\"\n}"
+        },
+        "description": "Stub endpoint to simulate external Driving License API."
+      }
+    },
+    {
+      "name": "Stub - Car Pricing Rate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/stub/pricing/rental/rate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "stub",
+            "pricing",
+            "rental",
+            "rate"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"category\": \"MEDIUM\"\n}"
+        },
+        "description": "Stub endpoint to simulate external Car Pricing API."
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "bookingId",
+      "value": "replace-with-actual-booking-id"
+    }
+  ]
+}
