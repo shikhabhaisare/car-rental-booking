@@ -181,10 +181,6 @@ mvn test
 4. **Caching**
     - Cache pricing data and license verification responses using Redis for performance
 
-5. **API Improvements**
-    - API versioning
-    - Standardized error codes and messages
-
 6. **Testing Enhancements**
     - Integration and load testing
     - MockMvc or Testcontainers for end-to-end testing
