@@ -81,6 +81,25 @@ com.xyz.carrental.booking
 
 ---
 
+## Postman Collection
+
+A ready-to-use Postman collection is included:
+
+📄 **`car-rental.postman_collection.json`**
+
+It includes:
+- Endpoints for confirming bookings 
+- Retrieving booking details  
+- Driving license stub API
+- Car pricing stub API 
+
+To use:
+1. Open Postman.
+2. Click **Import → File**.
+3. Select `car-rental.postman_collection.json`.
+
+---
+
 ### Logging & Exception Handling
 
 - Logging with `SLF4J` at controller and service layer
