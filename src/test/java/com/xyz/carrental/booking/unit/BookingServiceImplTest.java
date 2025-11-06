@@ -1,25 +1,29 @@
-package com.xyz.carrental.booking;
+package com.xyz.carrental.booking.unit;
 
-import com.xyz.carrental.booking.client.CarPricingClient;
-import com.xyz.carrental.booking.client.DrivingLicenseClient;
-import com.xyz.carrental.booking.domain.CarSegment;
-import com.xyz.carrental.booking.dto.BookingDetailsResponse;
-import com.xyz.carrental.booking.dto.ConfirmBookingRequest;
-import com.xyz.carrental.booking.entity.Booking;
-import com.xyz.carrental.booking.exception.BookingException;
-import com.xyz.carrental.booking.mapper.BookingMapper;
-import com.xyz.carrental.booking.repository.BookingRepository;
-import com.xyz.carrental.booking.service.BookingServiceImpl;
-import com.xyz.carrental.booking.stub.model.LicenseResponse;
-import com.xyz.carrental.booking.stub.model.RateResponse;
-import com.xyz.carrental.booking.validation.LicenseValidator;
+import com.xyz.carrental.booking.booking.client.CarPricingClient;
+import com.xyz.carrental.booking.booking.client.DrivingLicenseClient;
+import com.xyz.carrental.booking.booking.domain.CarSegment;
+import com.xyz.carrental.booking.booking.dto.BookingDetailsResponse;
+import com.xyz.carrental.booking.booking.dto.ConfirmBookingRequest;
+import com.xyz.carrental.booking.booking.entity.Booking;
+import com.xyz.carrental.booking.booking.exception.BookingException;
+import com.xyz.carrental.booking.booking.mapper.BookingMapper;
+import com.xyz.carrental.booking.booking.repository.BookingRepository;
+import com.xyz.carrental.booking.booking.service.BookingServiceImpl;
+import com.xyz.carrental.booking.booking.stub.model.LicenseResponse;
+import com.xyz.carrental.booking.booking.stub.model.RateResponse;
+import com.xyz.carrental.booking.booking.validation.LicenseValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.*;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Optional;
 import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
