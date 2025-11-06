@@ -5,3 +5,12 @@
 *.iml
 /.mvn
 **/application-local.yml
+
+# Ignore IDE settings
+.idea/
+
+# Ignore macOS system files
+.DS_Store
+
+# ignore license if you don’t want to version-control it
+LICENSE
